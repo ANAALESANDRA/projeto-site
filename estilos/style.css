@@ -2,8 +2,13 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
 }
+
 body{
-    background-color: rgb(52, 52, 131);
+  background: url("images/background_music.jpg") center center no-repeat fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 main{
