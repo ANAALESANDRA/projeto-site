@@ -11,6 +11,12 @@ body{
   background-size: cover;
 }
 
+img.lado_esquerdo{
+    float: left;
+}
+img.lado_direito{
+    float: right;
+}
 main{
     background-color: white;
     width: 500px;
