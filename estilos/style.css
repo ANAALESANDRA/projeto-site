@@ -4,7 +4,7 @@
 }
 
 body{
-  background-color:url("../images/background_music.JPG") center center no-repeat fixed; 
+  background-color:wheat; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -18,8 +18,11 @@ img.lado_direito{
 }
 main{
     background:url("../images/entardecer.jpg") center center no-repeat fixed;
-    width: 1000px;
+    width: 800px;
     margin: auto;
     padding: 10px;
     box-shadow: 3px 3px 5px rgb(53, 48, 48);
+}
+li, h1 {
+    color: white;
 }
