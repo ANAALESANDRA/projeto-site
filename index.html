@@ -5,28 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Playlist of my pretty daugther</title>
     <link rel="stylesheet" href="estilos/style.css">
+    <style>
+        #playlist{
+            list-style: none;
+        }
+        #playlist li a{
+            color:orangered;
+            text-decoration:none;
+        }
+        #playlist .current-song a{
+            color:rgb(161, 59, 40);
+        }
+    </style>
 </head>
 <body>
     <main>
         <header><h1>Favorites Musics at moment</h1></header>
-        <ul>    
-            <li> ➤Paris in the rain-lauv </li>
-            <li> ➤Face to face - Ruel  </li>
-            <li> ➤Like strangers do- AJ Mitchell </li>
-            <li> ➤Rewrite the stars- James Arthur </li>
-            <li> ➤Stupid- tate Mc Rae </li>
-            <li> ➤This city - Sam Fischer  </li>
-            <li> ➤Just friends- Audrey mika </li>
-            <li> ➤All the kids are depressed- Jeremy zucker </li>
-            <li> ➤Feel something- Bea Miller </li>
-            <li> ➤Don’t mind - Kent jones </li>
-            <li> ➤Hold on - chord overstreet </li>
-            
-            <audio src="music/Lauv - Paris in the Rain.mp3" autoplay loop>
-                 Seu Navegador não suporta HTML :(
-            </audio>
-        </ul>    
-            
+        <audio src="" controls id="audioPlayer">
+            Seu Navegador não suporta HTML5 :(
+        </audio>
+        <ul id="playlist">
+            <li class="current-song"><a href="music/Lauv - Paris in the Rain.mp3">➤Paris in the rain-lauv</a></li>
+            <li><a href="music/Ruel - Face To Face.mp3">➤Face to face - Ruel</a></li>
+            <li><a href="music/AJ Mitchell - Like Strangers Do.mp3">➤Like strangers do- AJ Mitchell</a></li>
+            <li><a href="music/Lauv - Paris in the Rain.mp3">➤Rewrite the stars- James Arthur</a></li>
+            <li><a href="music/Lauv - Paris in the Rain.mp3">➤Stupid- tate Mc Rae</a></li>
+            <li><a href="music/music/Lauv - Paris in the Rain.mp3">➤This city - Sam Fischer</a></li>
+            <li><a href="music/Lauv - Paris in the Rain.mp3">➤Just friends- Audrey mika</a></li>
+            <li><a href="music/Lauv - Paris in the Rain.mp3">➤All the kids are depressed- Jeremy zucker</a></li>
+            <li><a href="music/Lauv - Paris in the Rain.mp3">➤Feel something- Bea Miller</a></li>
+            <li><a href="music/Lauv - Paris in the Rain.mp3">➤Don’t mind - Kent jones</a></li>
+            <li><a href="music/Lauv - Paris in the Rain.mp3">➤Hold on - chord overstreet</a></li>
+        </ul>
+        <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+        <script>
+            audioPlayer();
+            function audioPlayer(){
+                var currentSong = 0;
+                
+                $("#audioPlayer")[0].src = $("playlist li a")[0];
+                $("#playlist li a").click(function(e){
+                    e.preventDefault();
+                    $("#audioPlayer")[0].src = this;
+                    $("#audioPlayer")[0].play();
+                    $("#playlist li").removeClass("current-song");
+                    currentSong = $(this).parent().index();
+                    $(this).parent().addClass("current-song")
+                });
+
+                $("#audioPlayer")[0].addEventListener('ended',function(){
+                    currentSong++;
+                    if (currentSong == $("#playlist li a").length)
+                        currentSong = 0;
+                                          
+                    $("#playlist li").removeClass("current-song");
+                    $("#playlist li:eq("+currentSong+")").addClass("current-song");
+                    $("#audioPlayer")[0].src = $("#playlist li a")[currentSong].href;
+                    $("#audioPlayer")[0].play();
+                })
+            }
+        </script>
+        
     </main>
 </body>
 </html>

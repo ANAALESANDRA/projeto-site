@@ -4,7 +4,7 @@
 }
 
 body{
-  background-color:wheat; 
+  background: url("../images/entardecer.jpg") center center no-repeat fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -17,8 +17,9 @@ img.lado_direito{
     float: right;
 }
 main{
-    background:url("../images/entardecer.jpg") center center no-repeat fixed;
-    width: 800px;
+    
+    width: 400px;
+    height: 400px;
     margin: auto;
     padding: 10px;
     box-shadow: 3px 3px 5px rgb(53, 48, 48);
