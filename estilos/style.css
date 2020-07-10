@@ -17,7 +17,7 @@ img.lado_direito{
     float: right;
 }
 main{
-    background-color:url("../images/entardecer.jpg") center center no-repeat fixed;
+    background-color:url("../images/background_music.JPG") center center no-repeat fixed;
     width: 1000px;
     margin: auto;
     padding: 10px;
